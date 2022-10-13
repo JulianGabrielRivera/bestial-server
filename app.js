@@ -23,6 +23,8 @@ app.use(
 
 app.use(express.json());
 
+const authRoutes = require("./routes/auth.routes");
+app.use("/", authRoutes);
 app.listen("3001", () => {
   console.log("ready to go!");
 });
