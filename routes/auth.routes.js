@@ -15,4 +15,14 @@ router.post("/signup/customer", async (req, res, next) => {
   }
 });
 
+router.post("/login", async (req, res, next) => {
+  try {
+    const { email, password } = req.body;
+
+    const foundUser = await User.findOne({ email });
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 module.exports = router;

@@ -25,6 +25,9 @@ app.use(express.json());
 
 const authRoutes = require("./routes/auth.routes");
 app.use("/", authRoutes);
+
+const barberRoutes = require("./routes/barbers.routes");
+app.use("/", barberRoutes);
 app.listen("3001", () => {
   console.log("ready to go!");
 });

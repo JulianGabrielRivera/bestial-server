@@ -1,11 +1,11 @@
 const router = require("express").Router();
-const Barber = require("../models/User.model");
+const Barber = require("../models/Barber.model");
 
 router.post("/signup/barber", async (req, res, next) => {
   try {
     const { name, email, password, experience, location, from } = req.body;
 
-    const createdUser = await User.create({
+    const createdUser = await Barber.create({
       name,
       password,
       email,
@@ -18,3 +18,5 @@ router.post("/signup/barber", async (req, res, next) => {
     console.log(err);
   }
 });
+
+module.exports = router;
